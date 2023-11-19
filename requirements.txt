@@ -3,4 +3,5 @@ numpy==1.24.3
 streamlit==1.28.2
 transformers==4.29.2
 wavio==0.0.8
+torch==2.1.0
 
