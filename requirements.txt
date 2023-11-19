@@ -1,6 +1,6 @@
 librosa==0.10.1
-numpy 
+numpy==1.24.3
 streamlit==1.28.2
-transformers
+transformers==4.29.2
 wavio==0.0.8
 
