@@ -35,23 +35,21 @@ def synthesize(embed, text):
   return generated_wav
 
 def get_voice(text, emotion_label):
-
-   match emotion_label:
-    case "amusment" | "excitement" | "joy" | "optimism" | "relief" | "love":
-        audio_path = "./happy.wav"  #works but probably needs 22000 sample rate when saving
-        sample_r = 21000
-    case "anger" | "annoyance":
-        audio_path = "./Carlin.mp3" #sample rate 18000
-        sample_r = 18000
-    case "sadness" | "grief" | "remorse" | "disappointment":
-        audio_path = "./sad.wav" #works with 21000 sample rate
-        sample_r = 21000
-    case "nervousness":
-        audio_path = "./Justin.mp3" #17000 sample rate
-        sample_r = 17000
-    case _:
-        audio_path = "./neutral.wav" #works with 15500 sample rate
-        sample_r = 15500
+   if emotion_label in ["amusement", "excitement", "joy", "optimism", "relief", "love"]:
+    audio_path = "./happy.wav"
+    sample_r = 21000
+   elif emotion_label in ["anger", "annoyance"]:
+    audio_path = "./Carlin.mp3"
+    sample_r = 18000
+   elif emotion_label in ["sadness", "grief", "remorse", "disappointment"]:
+    audio_path = "./sad.wav"
+    sample_r = 21000
+   elif emotion_label == "nervousness":
+    audio_path = "./Justin.mp3"
+    sample_r = 17000
+   else:
+    audio_path = "./neutral.wav"
+    sample_r = 15500
 
    audio_data, sample_rate = librosa.load(audio_path)
    embedding = _compute_embedding(audio_data)
