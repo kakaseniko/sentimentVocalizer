@@ -1,0 +1,7 @@
+librosa==0.10.1
+numpy @ file:///work/mkl/numpy_and_numpy_base_1682953417311/work
+numpydoc @ file:///work/ci_py311/numpydoc_1676845056742/work
+streamlit==1.28.2
+transformers @ file:///croot/transformers_1684845848079/work
+wavio==0.0.8
+
